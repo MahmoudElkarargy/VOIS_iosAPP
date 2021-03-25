@@ -9,25 +9,28 @@ import UIKit
 class FeaturesController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
     @IBOutlet weak var collectionView: UICollectionView!
     
-    let featuresLabel = ["Money Count", "Object Detection", "bla bla", "bla bla", "bla bla"]
-    let featuresImages: [UIImage] = [
-        UIImage(named: "AppLogo")!,
-        UIImage(named: "AppLogo")!,
-        UIImage(named: "AppLogo")!,
-        UIImage(named: "AppLogo")!,
-        UIImage(named: "AppLogo")!,
-    ]
-    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return featuresLabel.count
+        return 5
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
-        cell.label.text = featuresLabel[indexPath.item]
-        cell.image.image = featuresImages[indexPath.item]
+        let feature = FeatureOption(rawValue: indexPath.item)
+        cell.label.text = feature?.description
+        cell.image.image = feature?.image
         
+        //Modify cell
+        
+        cell.backgroundColor = .white
+        cell.layer.cornerRadius = 10
+        cell.layer.masksToBounds = true
+        
+        cell.layer.masksToBounds = false
+        cell.layer.shadowColor = UIColor.black.cgColor
+        cell.layer.shadowOpacity = 0.2
+        cell.layer.shadowOffset = CGSize(width: 0, height: 0)
+        cell.layer.shadowRadius = cell.layer.cornerRadius
         return cell
     }
     
@@ -37,10 +40,10 @@ class FeaturesController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.delegate = self
         
         //set spacing of cells.
+        
+        
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
-        layout.sectionInset = UIEdgeInsets.init(top: 0, left: 10, bottom: 0, right: 10)
-        layout.minimumInteritemSpacing = 5
-        layout.itemSize = CGSize(width: (self.collectionView.frame.size.width-20)/2, height: (self.collectionView.frame.size.height)/3)
+        layout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
     }
     
 }
