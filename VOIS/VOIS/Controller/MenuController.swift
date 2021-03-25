@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MenuController.swift
 //  VOIS
 //
 //  Created by Mahmoud Elkarargy on 3/25/21.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class MenuController: UIViewController{
+    // MARK: - Properties
+    
+    // MARK: - Init
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
-
+    // MARK: - Handlers
 }
-
