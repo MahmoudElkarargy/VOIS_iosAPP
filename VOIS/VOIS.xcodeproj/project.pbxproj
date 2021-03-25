@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D65E7054260C8D7400C4F85C /* MenuOption.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E7053260C8D7400C4F85C /* MenuOption.swift */; };
 		D67768A8260BEEB40028112C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67768A7260BEEB40028112C /* AppDelegate.swift */; };
 		D67768AA260BEEB40028112C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67768A9260BEEB40028112C /* SceneDelegate.swift */; };
 		D67768AF260BEEB40028112C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67768AD260BEEB40028112C /* Main.storyboard */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D65E7053260C8D7400C4F85C /* MenuOption.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuOption.swift; sourceTree = "<group>"; };
 		D67768A4260BEEB40028112C /* VOIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67768A7260BEEB40028112C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67768A9260BEEB40028112C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -92,6 +94,7 @@
 		D67768C0260BF58A0028112C /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D65E7053260C8D7400C4F85C /* MenuOption.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				D67768C3260BF5AE0028112C /* ContainerController.swift in Sources */,
 				D67768CD260C0BDA0028112C /* Protocols.swift in Sources */,
 				D67768C6260BF5C50028112C /* HomeController.swift in Sources */,
+				D65E7054260C8D7400C4F85C /* MenuOption.swift in Sources */,
 				D67768A8260BEEB40028112C /* AppDelegate.swift in Sources */,
 				D67768D1260C10DA0028112C /* MenuOptionCell.swift in Sources */,
 				D67768B2260BEEB40028112C /* VOIS.xcdatamodeld in Sources */,

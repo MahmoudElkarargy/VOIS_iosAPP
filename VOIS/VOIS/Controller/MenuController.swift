@@ -11,12 +11,17 @@ private let reusedIdentifer = "MenuOption"
 class MenuController: UIViewController{
     // MARK: - Properties
     var tableView: UITableView!
-    
+    var delegate: HomeControlDelegate?
     // MARK: - Init
     
     override func viewDidLoad() {
         super.viewDidLoad()
         configureTableView()
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        let indexPath = IndexPath(row: 0, section: 0)
+        tableView.selectRow(at: indexPath, animated: false, scrollPosition: .bottom)
     }
     // MARK: - Handlers
     
@@ -26,6 +31,8 @@ class MenuController: UIViewController{
         tableView.dataSource = self
         tableView.register(MenuOptionCell.self, forCellReuseIdentifier: reusedIdentifer)
         tableView.backgroundColor = UIColor(hex: "#102976ff")
+        tableView.separatorStyle = .none
+        tableView.rowHeight = 80
         
         view.addSubview(tableView)
         tableView.translatesAutoresizingMaskIntoConstraints = false
@@ -43,8 +50,15 @@ extension MenuController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reusedIdentifer, for: indexPath) as! MenuOptionCell
+        
+        let menuOption = MenuOption(rawValue: indexPath.row)
+        cell.descriptionLabel.text = menuOption?.description
+        cell.iconImageView.image = menuOption?.image
         return cell
     }
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let menuOption = MenuOption(rawValue: indexPath.row)
+        delegate?.handleMenuToggle(forMenuOption: menuOption)
+    }
 }

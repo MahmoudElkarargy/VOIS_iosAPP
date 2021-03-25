@@ -20,14 +20,14 @@ class HomeController: UIViewController{
     // MARK: - Handlers
     
     @objc func handleMenuToggle(){
-        delegate?.handleMenuToggle()
+        delegate?.handleMenuToggle(forMenuOption: nil)
     }
     
     func configureNavigationBar(){
         navigationController?.navigationBar.barTintColor = UIColor(hex: "#102976ff")
         navigationController?.navigationBar.barStyle = .default
         
-        navigationItem.title = "Side Menu"
+        navigationItem.title = "Features"
         
         let textChangeColor = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textChangeColor
