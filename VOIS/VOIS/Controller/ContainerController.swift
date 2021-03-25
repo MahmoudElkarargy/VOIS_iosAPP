@@ -13,7 +13,6 @@ class ContainerController: UIViewController{
     var centerController: UIViewController!
     var isExpanded = false
     var titleString: String!
-    
     // MARK: - Init
     
     override func viewDidLoad() {
@@ -31,7 +30,7 @@ class ContainerController: UIViewController{
     override var prefersStatusBarHidden: Bool{
         return isExpanded
     }
-    
+
     // MARK: - Handlers
     
     func configrueHomeController(){
@@ -80,10 +79,10 @@ class ContainerController: UIViewController{
         
         case .Features:
             print("Show features")
-            titleString = "Features"
+            let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "FeaturesStoryboard") as! FeaturesController
+            self.present(vc, animated: true, completion: nil)
         case .TriggerWords:
             print("Show Triggered")
-            titleString = "Triggered Words"
         case .SoftwareUpdates:
             print("Show Software")
         case .Settings:

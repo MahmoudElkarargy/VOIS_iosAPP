@@ -27,7 +27,7 @@ class HomeController: UIViewController{
         navigationController?.navigationBar.barTintColor = UIColor(hex: "#102976ff")
         navigationController?.navigationBar.barStyle = .default
         
-        navigationItem.title = "Features"
+        navigationItem.title = "IRIS"
         
         let textChangeColor = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textChangeColor
@@ -63,3 +63,4 @@ extension UIColor {
         return nil
     }
 }
+
