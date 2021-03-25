@@ -38,12 +38,19 @@ class FeaturesController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         collectionView.dataSource = self
         collectionView.delegate = self
-        
-        //set spacing of cells.
-        
-        
+
+        self.setupNavigationBar(image: UIImage(named: "TransperentLogo")!)
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
     }
     
+}
+extension UIViewController {
+    func setupNavigationBar(image: UIImage) {
+        //set your image navigation bar center
+        //set titile
+        //self.navigationItem.title =  title
+        //set image in the center
+         self.navigationItem.titleView = UIImageView(image: image)
+    }
 }

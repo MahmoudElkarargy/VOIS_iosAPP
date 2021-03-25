@@ -13,6 +13,7 @@
 		D65E7062260CB15200C4F85C /* SoftwareUpdateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E7061260CB15200C4F85C /* SoftwareUpdateController.swift */; };
 		D65E7065260CB16100C4F85C /* SettingsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E7064260CB16100C4F85C /* SettingsController.swift */; };
 		D65E706E260CC9F400C4F85C /* Feature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E706D260CC9F400C4F85C /* Feature.swift */; };
+		D65E7075260CED9D00C4F85C /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D65E7074260CED9D00C4F85C /* LoginController.swift */; };
 		D67768A8260BEEB40028112C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67768A7260BEEB40028112C /* AppDelegate.swift */; };
 		D67768AA260BEEB40028112C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67768A9260BEEB40028112C /* SceneDelegate.swift */; };
 		D67768AF260BEEB40028112C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67768AD260BEEB40028112C /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		D65E7061260CB15200C4F85C /* SoftwareUpdateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoftwareUpdateController.swift; sourceTree = "<group>"; };
 		D65E7064260CB16100C4F85C /* SettingsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsController.swift; sourceTree = "<group>"; };
 		D65E706D260CC9F400C4F85C /* Feature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feature.swift; sourceTree = "<group>"; };
+		D65E7074260CED9D00C4F85C /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
 		D67768A4260BEEB40028112C /* VOIS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VOIS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D67768A7260BEEB40028112C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D67768A9260BEEB40028112C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +99,7 @@
 				D65E705E260CB13E00C4F85C /* TrigerredWordsControler.swift */,
 				D65E7061260CB15200C4F85C /* SoftwareUpdateController.swift */,
 				D65E7064260CB16100C4F85C /* SettingsController.swift */,
+				D65E7074260CED9D00C4F85C /* LoginController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 				D65E7065260CB16100C4F85C /* SettingsController.swift in Sources */,
 				D67768B2260BEEB40028112C /* VOIS.xcdatamodeld in Sources */,
 				D67768AA260BEEB40028112C /* SceneDelegate.swift in Sources */,
+				D65E7075260CED9D00C4F85C /* LoginController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

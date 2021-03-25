@@ -14,6 +14,8 @@ class TrigerredWordsController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupNavigationBar(image: UIImage(named: "TransperentLogo")!)
+
     }
     // MARK: - Handlers
 }
