@@ -15,7 +15,7 @@ class LoginController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.titleView = UIImageView(image: UIImage(named: "TransperentLogo"))
+        self.navigationItem.titleView = UIImageView(image: UIImage(named: "WhiteLogo"))
         navigationItem.hidesBackButton = true
     }
     @IBAction func LoginPressed(_ sender: Any) {

@@ -39,7 +39,7 @@ class FeaturesController: UIViewController, UICollectionViewDelegate, UICollecti
         collectionView.dataSource = self
         collectionView.delegate = self
 
-        self.setupNavigationBar(image: UIImage(named: "TransperentLogo")!)
+        self.setupNavigationBar(image: UIImage(named: "WhiteLogo")!)
         let layout = self.collectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.sectionInset = UIEdgeInsets.init(top: 10, left: 10, bottom: 10, right: 10)
     }

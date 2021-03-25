@@ -14,7 +14,7 @@ class SoftWareUpdateController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setupNavigationBar(image: UIImage(named: "TransperentLogo")!)
+        self.setupNavigationBar(image: UIImage(named: "WhiteLogo")!)
 
     }
     // MARK: - Handlers
