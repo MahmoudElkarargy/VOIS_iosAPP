@@ -16,29 +16,29 @@ class TrigerredWordsController: UIViewController, AVAudioPlayerDelegate, AVAudio
     let commands = ["Money Counter", "Lightness Detection", "Object Detection", "Text Scanner", "Color Detection"]
     var pickerView = UIPickerView()
     
-    @IBOutlet weak var playButton: UIButton!
-    @IBOutlet weak var picker: UITextField!
-    @IBOutlet weak var recordingLabel: UILabel!
-    @IBOutlet weak var playLabel: UILabel!
-    @IBOutlet weak var stopButton: UIButton!
-    @IBOutlet weak var recordButton: UIButton!
+    @IBOutlet weak var commandTextField: UITextField!
+    //    @IBOutlet weak var playButton: UIButton!
+//    @IBOutlet weak var recordingLabel: UILabel!
+//    @IBOutlet weak var playLabel: UILabel!
+//    @IBOutlet weak var stopButton: UIButton!
+//    @IBOutlet weak var recordButton: UIButton!
     
-    var audioPlayer : AVAudioPlayer?
     var audioRecorder : AVAudioRecorder?
+    var audioPlayer : AVAudioPlayer!
 
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar(image: UIImage(named: "WhiteLogo")!)
-        playLabel.text = "No saved Records yet"
+//        playLabel.text = "No saved Records yet"
         pickerView.delegate = self
         pickerView.dataSource = self
-        picker.delegate = self
-        picker.inputView = pickerView
-        picker.textAlignment = .center
-        
-        playButton.isEnabled = false
-        stopButton.isEnabled = false
+        commandTextField.delegate = self
+        commandTextField.inputView = pickerView
+        commandTextField.textAlignment = .center
+        pickerView.backgroundColor = UIColor(red: 21/255, green: 31/255, blue: 72/255, alpha: 1)
+//        playButton.isEnabled = false
+//        stopButton.isEnabled = false
 
         // getting URL path for audio
         let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
@@ -76,85 +76,94 @@ class TrigerredWordsController: UIViewController, AVAudioPlayerDelegate, AVAudio
     }
     
     //record audio
-    @IBAction func recordAudio(sender: AnyObject) {
-        recordingLabel.text = "Recording in progress"
-        if audioRecorder?.isRecording == false{
-            playButton.isEnabled = false
-            stopButton.isEnabled = true
-            audioRecorder?.record()
-        }
-    }
+//    @IBAction func recordAudio(sender: AnyObject) {
+//        recordingLabel.text = "Recording in progress"
+//        if audioRecorder?.isRecording == false{
+//            playButton.isEnabled = false
+//            stopButton.isEnabled = true
+//            audioRecorder?.record()
+//        }
+//    }
     //stop recording audio
-    @IBAction func stopAudio(sender: AnyObject) {
-
-        stopButton.isEnabled = false
-        playButton.isEnabled = true
-        recordButton.isEnabled = true
-
-        if audioRecorder?.isRecording == true{
-            audioRecorder?.stop()
-            playLabel.text = "Play your Record"
-        }else{
-            audioPlayer?.stop()
-        }
-    }
-    //play your recorded audio
-    @IBAction func playAudio(sender: AnyObject) {
-
-        if audioRecorder?.isRecording == false{
-            stopButton.isEnabled = true
-            recordButton.isEnabled = false
-
-            var error : NSError?
-            do {
-                let player = try AVAudioPlayer(contentsOf: audioRecorder!.url)
-                 audioPlayer = player
-             } catch {
-                 print(error)
-             }
-
-            audioPlayer?.delegate = self
-
-            if let err = error{
-                print("audioPlayer error: \(err.localizedDescription)")
-            }else{
-                audioPlayer?.play()
-            }
-        }
-    }
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
-        recordButton.isEnabled = true
-        stopButton.isEnabled = false
-    }
-
-    private func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
-        print("Audio Play Decode Error")
-    }
-
-    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-    }
-
-    private func audioRecorderEncodeErrorDidOccur(recorder: AVAudioRecorder!, error: NSError!) {
-        print("Audio Record Encode Error")
-    }
+//    @IBAction func stopAudio(sender: AnyObject) {
+//
+//        stopButton.isEnabled = false
+//        playButton.isEnabled = true
+//        recordButton.isEnabled = true
+//
+//        if audioRecorder?.isRecording == true{
+//            audioRecorder?.stop()
+//            playLabel.text = "Play your Record"
+//        }else{
+//            audioPlayer?.stop()
+//        }
+//    }
+//    //play your recorded audio
+//    @IBAction func playAudio(sender: AnyObject) {
+//
+//        if audioRecorder?.isRecording == false{
+//            stopButton.isEnabled = true
+//            recordButton.isEnabled = false
+//
+//            var error : NSError?
+//            do {
+//                let player = try AVAudioPlayer(contentsOf: audioRecorder!.url)
+//                 audioPlayer = player
+//             } catch {
+//                 print(error)
+//             }
+//
+//            audioPlayer?.delegate = self
+//
+//            if let err = error{
+//                print("audioPlayer error: \(err.localizedDescription)")
+//            }else{
+//                audioPlayer?.play()
+//            }
+//        }
+//    }
+//    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+//        recordButton.isEnabled = true
+//        stopButton.isEnabled = false
+//    }
+//
+//    private func audioPlayerDecodeErrorDidOccur(player: AVAudioPlayer!, error: NSError!) {
+//        print("Audio Play Decode Error")
+//    }
+//
+//    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
+//    }
+//
+//    private func audioRecorderEncodeErrorDidOccur(recorder: AVAudioRecorder!, error: NSError!) {
+//        print("Audio Record Encode Error")
+//    }
 }
 
 extension TrigerredWordsController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return commands.count
     }
-    
+
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return commands[row]
     }
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        picker.text = commands[row]
-//        picker.resignFirstResponder()
+        commandTextField.text = commands[row]
+        commandTextField.resignFirstResponder()
 //        self.view.endEditing(true)
     }
-    
+    func pickerView(_ pickerView: UIPickerView, viewForRow row: Int, forComponent component: Int, reusing view: UIView?) -> UIView {
+        let view = UIView(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 300, height: 50))
+        label.text = commands[row].description
+        label.textColor = .white
+        label.textAlignment = .center
+        label.font = UIFont.systemFont(ofSize: 24, weight: UIFont.Weight.bold)
+        view.addSubview(label)
+        return view
+    }
 }
