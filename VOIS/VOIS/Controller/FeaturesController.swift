@@ -37,7 +37,6 @@ class FeaturesController: UIViewController, UICollectionViewDelegate, UICollecti
     override func viewDidLoad() {
         collectionView.dataSource = self
         collectionView.delegate = self
-//        collectionView.translatesAutoresizingMaskIntoConstraints = false
         self.setupNavigationBar(image: UIImage(named: "WhiteLogo")!)
     }
     

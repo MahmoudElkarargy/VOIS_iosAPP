@@ -24,7 +24,6 @@ class UserInfoHeader: UIView {
         let label = UILabel()
         label.text = "Tony Stark"
         label.font = UIFont.boldSystemFont(ofSize: 16)
-//        label.font = UIFont(name: "Helvetica Neue Bold ", size: 18)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
