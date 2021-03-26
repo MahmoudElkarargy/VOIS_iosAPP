@@ -564,11 +564,11 @@
             </objects>
             <point key="canvasLocation" x="1133" y="386"/>
         </scene>
-        <!--Triggered Words-->
+        <!--Trigger Words-->
         <scene sceneID="Er7-r1-vds">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8mC-7o-de2" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Triggered Words" image="Triggered" selectedImage="Triggered" id="cge-oQ-n6N"/>
+                    <tabBarItem key="tabBarItem" title="Trigger Words" image="Triggered" selectedImage="Triggered" id="cge-oQ-n6N"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="wXT-Pb-WBG">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
