@@ -20,11 +20,11 @@ enum FeatureOption: Int, CustomStringConvertible {
         case .moneyCounter:
             return ("Money Counter")
         case .lightnessDetection:
-            return("Lightness Detection")
+            return("Brightness Detection")
         case .objectDetection:
             return("Object Detection")
         case .textScanner:
-            return("Text Scanner")
+            return("Text Detection")
         case .colorDetection:
             return("Color Detection")
         }
