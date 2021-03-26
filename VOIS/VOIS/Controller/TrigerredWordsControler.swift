@@ -8,12 +8,12 @@
 import UIKit
 import AVFoundation
 
-class TrigerredWordsController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDelegate{
+class TrigerredWordsController: UIViewController, AVAudioPlayerDelegate, AVAudioRecorderDelegate, UITextFieldDelegate{
     
     
     // MARK: - Properties
    
-    let commands = ["money Counter", "lightness Detection", "object Detection", "text Scanner", "color Detection"]
+    let commands = ["Money Counter", "Lightness Detection", "Object Detection", "Text Scanner", "Color Detection"]
     var pickerView = UIPickerView()
     
     @IBOutlet weak var playButton: UIButton!
@@ -26,17 +26,11 @@ class TrigerredWordsController: UIViewController, AVAudioPlayerDelegate, AVAudio
     var audioPlayer : AVAudioPlayer?
     var audioRecorder : AVAudioRecorder?
 
-//    enum RecordingState {
-//        case  recording
-//        case notRecording
-//    }
     // MARK: - Init
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupNavigationBar(image: UIImage(named: "WhiteLogo")!)
-//        stopRecordingButton.isEnabled = false
         playLabel.text = "No saved Records yet"
-//        playButton.isEnabled = false
         pickerView.delegate = self
         pickerView.dataSource = self
         picker.delegate = self
@@ -74,75 +68,16 @@ class TrigerredWordsController: UIViewController, AVAudioPlayerDelegate, AVAudio
         }
     }
 
-//    func  configureUI(_ recordingState: RecordingState) {
-//        switch recordingState {
-//        case .recording:
-//        // Update the UI to reflect recording state
-//            recordingLabel.text = "Recording in progress"
-//            stopRecordingButton.isEnabled = true
-//            recordButton.isEnabled = false
-//
-//            let dirPath = NSSearchPathForDirectoriesInDomains(.documentDirectory,.userDomainMask, true)[0] as String
-//            let recordingName = "recordedVoice.wav"
-//            let pathArray = [dirPath, recordingName]
-//            let filePath = URL(string: pathArray.joined(separator: "/"))
-//
-//            let session = AVAudioSession.sharedInstance()
-//            try! session.setCategory(AVAudioSession.Category.playAndRecord, mode: AVAudioSession.Mode.default, options: AVAudioSession.CategoryOptions.defaultToSpeaker)
-//            try! audioRecorder = AVAudioRecorder(url: filePath!, settings: [:])
-//            audioRecorder.delegate = self
-//            audioRecorder.isMeteringEnabled = true
-//
-//            audioRecorder.prepareToRecord()
-//            audioRecorder.record()
-//        case .notRecording:
-//            // Update the UI to reflect not recording state
-//            stopRecordingButton.isEnabled = false
-//            recordButton.isEnabled = true
-//            recordingLabel.text = "Tab to record"
-//
-//            audioRecorder.stop()
-//            let audioSession = AVAudioSession.sharedInstance()
-//            try! audioSession.setActive(false)
-//        }
-//    }
-    
-    // MARK: - Handlers
-//    @IBAction func RecordAudio(_ sender: Any) {
-//        configureUI(.recording)
-//    }
-//
-//    @IBAction func StopRecording(_ sender: Any) {
-//        configureUI(.notRecording)
-//
-//    }
-//    @IBAction func playAudio(_ sender: Any) {
-//
-//    }
-//
-//    func audioRecorderDidFinishRecording(_ recorder: AVAudioRecorder, successfully flag: Bool) {
-//        if flag {
-////            performSegue(withIdentifier: "stopRecording", sender: audioRecorder.url)
-//            playButton.isEnabled = true
-//            playLabel.text = "Play your Record"
-//        }
-//        else {
-//            let controller = UIAlertController()
-//            controller.title = "Error"
-//            controller.message = "Please try agian"
-//
-//            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { action in self.dismiss(animated: true, completion: nil)
-//            }
-//
-//            controller.addAction(okAction)
-//            self.present(controller, animated: true, completion: nil)
-//        }
-//    }
-    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        //if return is pressed resign first responder to hide keyboard
+        textField.resignFirstResponder()
+        //Search when return pressed.
+        return true
+    }
     
     //record audio
     @IBAction func recordAudio(sender: AnyObject) {
-
+        recordingLabel.text = "Recording in progress"
         if audioRecorder?.isRecording == false{
             playButton.isEnabled = false
             stopButton.isEnabled = true
@@ -158,6 +93,7 @@ class TrigerredWordsController: UIViewController, AVAudioPlayerDelegate, AVAudio
 
         if audioRecorder?.isRecording == true{
             audioRecorder?.stop()
+            playLabel.text = "Play your Record"
         }else{
             audioPlayer?.stop()
         }
@@ -203,7 +139,7 @@ class TrigerredWordsController: UIViewController, AVAudioPlayerDelegate, AVAudio
     }
 }
 
-extension TrigerredWordsController: UIPickerViewDelegate, UIPickerViewDataSource, UITextFieldDelegate{
+extension TrigerredWordsController: UIPickerViewDelegate, UIPickerViewDataSource{
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -218,5 +154,7 @@ extension TrigerredWordsController: UIPickerViewDelegate, UIPickerViewDataSource
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         picker.text = commands[row]
 //        picker.resignFirstResponder()
+//        self.view.endEditing(true)
     }
+    
 }
