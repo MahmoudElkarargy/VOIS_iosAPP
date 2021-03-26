@@ -34,15 +34,15 @@ enum FeatureOption: Int, CustomStringConvertible {
         switch self{
             
         case .moneyCounter:
-            return UIImage(named: "AppLogo") ?? UIImage()
+            return UIImage(named: "MoneyCounter") ?? UIImage()
         case .lightnessDetection:
-            return UIImage(named: "AppLogo") ?? UIImage()
+            return UIImage(named: "LightDetection") ?? UIImage()
         case .objectDetection:
-            return UIImage(named: "AppLogo") ?? UIImage()
+            return UIImage(named: "ObjectDetection") ?? UIImage()
         case .textScanner:
-            return UIImage(named: "AppLogo") ?? UIImage()
+            return UIImage(named: "TextDetection") ?? UIImage()
         case .colorDetection:
-            return UIImage(named: "AppLogo") ?? UIImage()
+            return UIImage(named: "ColorDetection") ?? UIImage()
         }
     }
 }

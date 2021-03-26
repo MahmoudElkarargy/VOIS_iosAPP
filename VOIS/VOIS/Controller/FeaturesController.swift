@@ -17,7 +17,6 @@ class FeaturesController: UIViewController, UICollectionViewDelegate, UICollecti
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cell", for: indexPath) as! CollectionViewCell
         let feature = FeatureOption(rawValue: indexPath.item)
-        cell.label.text = feature?.description
         cell.image.image = feature?.image
         
         //Modify cell
