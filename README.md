@@ -3,7 +3,7 @@
 Mobile Application for blind and the visually impaired. Now with IRIS you can determine your colors, identify the denomination of the Egyptian currency and count it on the go, Detect: Brightness and objects and also read texts. 
 
 ## App Structure
-IRIS is following the MVVC pattern.
+IRIS is following the MVC pattern.
 <p align="center">
   <img src="images/MVVC.png">
 </p>
@@ -47,7 +47,7 @@ IRIS is following the MVVC pattern.
 <img src="images/settings.png" alt="alt text" width="300" height="550" >
 </p>
 
-## VOIS HACK
+## VOIS HACKATHON
 Event by _VOIS Technology Egypt and Vodafone, in collaboration with the Ministry of Communications and Information Technology, the ITI, the NTI and the ITIDA. 
 * Held from 25 to 28 of March.
 
